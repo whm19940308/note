@@ -25,6 +25,7 @@ crontab -l   查看crontab
 crontab -e   编辑crontab
 crontab -r   删除crontab
 
+minute   hour   day   month   week  year  [user]  [command]
 crontab表达式说明：
 *    *    *    *    *    *     [user]   [command]
 -    -    -    -    -    -
