@@ -23,7 +23,7 @@ cat /proc/cpuinfo
  
 hostname
 查看计算机名
- 
+
 lsmod
 列出加载的内核模块
  
@@ -35,7 +35,7 @@ env
 ```
 free -m
 查看内存使用量和交换区使用量
- 
+
 df -h
 查看各分区使用情况
  
