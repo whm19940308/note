@@ -1,5 +1,11 @@
 ###crontab定时执行任务命令：
 ```
+yum install crontabs    安装crontab
+
+crontab -l   查看crontab
+crontab -e   编辑crontab
+crontab -r   删除crontab
+
 当安装完成操作系统之后，默认便会启动此任务调度命令。
 crond 命令每分锺会定期检查是否有要执行的工作，如果有要执行的工作便会自动执行该工作。
 而 linux 任务调度的工作主要分为以下两类：
@@ -21,11 +27,15 @@ service crond restart  重启服务
 service crond reload   重新载入配置
 service crond status   查看服务状态
 
-crontab -l   查看crontab
-crontab -e   编辑crontab
-crontab -r   删除crontab
-
 minute   hour   day   month   week  year  [user]  [command]
+minute      表示分钟，可以是从0到59之间的任何整数
+hour        表示小时，可以是从0到23之间的任何整数
+day         表示日期，可以是从1到31之间的任何整数
+month       表示月份，可以是从1到12之间的任何整数
+week        表示星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日
+year        表示公元几年
+command     要执行的命令，可以是系统命令，也可以是自己编写的脚本文
+
 crontab表达式说明：
 *    *    *    *    *    *     [user]   [command]
 -    -    -    -    -    -
@@ -45,6 +55,12 @@ f1 f2 f3 f4 f5 program
 3. 当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推
 4. 当 f1 为 */n 时表示每 n 分钟个时间间隔执行一次，f2 为 */n 表示每 n 小时个时间间隔执行一次，其馀类推
 5. 当 f1 为 a, b, c,... 时表示第 a, b, c,... 分钟要执行，f2 为 a, b, c,... 时表示第 a, b, c...个小时要执行，其馀类推
+
+在以上各个字段中，还可以使用以下特殊字符：
+星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作
+逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，"1,2,5,7,8,9"
+中杠（-）：可以用整数之间的中杠表示一个整数范围，例如"2-6"表示"2,3,4,5,6"
+正斜线（/）：可以用正斜线指定时间的间隔频率，例如"0-23/2"表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次
 
 crontab命令实例
 0 0 L * *        每月的最后1天执行
