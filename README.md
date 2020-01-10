@@ -9,5 +9,5 @@
 ```
 
 PHP工具类，请记得 star： [PHP工具类](https://github.com/whm19940308/phpTools)  
-个人博客： [铭之博客](https://www.whmblog.cn)
-
+个人博客： [铭之博客](https://www.whmblog.cn)    
+![铭之博客](https://www.whmblog.cn/themes/simpleboot3/public/assets/blog/images/logo.png)
