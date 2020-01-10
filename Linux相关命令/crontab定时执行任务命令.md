@@ -1,4 +1,4 @@
-###crontab定时执行任务命令：
+###crontab定时执行任务命令
 ```
 yum install crontabs    安装crontab
 
