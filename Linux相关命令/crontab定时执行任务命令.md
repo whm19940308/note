@@ -1,7 +1,19 @@
-###crontab定时执行任务命令
+###crontab安装命令
 ```
 yum install crontabs    安装crontab
+```
 
+###crontab开启/停止命令
+```
+service crond start    启动服务
+service crond stop     关闭服务
+service crond restart  重启服务
+service crond reload   重新载入配置
+service crond status   查看服务状态
+```
+
+###crontab定时执行任务命令
+```
 crontab -l   查看crontab
 crontab -e   编辑crontab
 crontab -r   删除crontab
@@ -20,12 +32,6 @@ crontab [ -u user ] { -l | -r | -e }
 说明：
 crontab 是用来让使用者在固定时间或固定间隔执行程序之用，换句话说，也就是类似使用者的时程表。
 -u user 是指设定指定 user 的时程表，这个前提是你必须要有其权限(比如说是 root)才能够指定他人的时程表。如果不使用 -u user 的话，就是表示设定自己的时程表
-
-service crond start    启动服务
-service crond stop     关闭服务
-service crond restart  重启服务
-service crond reload   重新载入配置
-service crond status   查看服务状态
 
 minute   hour   day   month   week  year  [user]  [command]
 minute      表示分钟，可以是从0到59之间的任何整数
